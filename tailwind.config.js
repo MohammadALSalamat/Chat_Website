@@ -9,6 +9,7 @@ module.exports = {
             center: true,
             padding: '2rem'
         },
+
     },
     variants: {
         accessibility: ['responsive', 'focus'],

@@ -58,8 +58,6 @@ Route::group(['middleware' => ['admin']], function () {
 
 
 
-//front end controllers
-Route::get('/', [FrontIndexController::class, 'main_page'])->name('main_page'); // main page for users
 // login page
 Route::match(['get', 'post'], '/login_page', [FrontIndexController::class, 'Front_login'])->name('Login_page');
 Route::match(['get', 'post'], '/register_page', [FrontIndexController::class, 'Front_register'])->name('register_page');
@@ -69,6 +67,9 @@ Route::get('/Front_logout', [FrontIndexController::class, 'logout'])->name('Fron
 
 Auth::routes();
 Route::group(['middleware' => ['Front']], function () {
+    //front end controllers
+    Route::get('/', [FrontIndexController::class, 'main_page'])->name('main_page'); // main page for users
+
     // user's profile that user can not access unless he register first
 
     Route::get('/profile/{id}', [FrontUserController::class, 'Profile'])->name('show_profile');
