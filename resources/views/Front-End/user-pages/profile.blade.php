@@ -26,7 +26,7 @@
             <!-- Information header -->
             <div class="flex col-span-4 py-5 mt-24 mr-32">
                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                    class="w-48 h-48 ml-auto border-2 border-black rounded-full img-responsive">
+                    class="object-cover w-48 h-48 ml-auto border-2 border-black rounded-full img-responsive">
                 <div class="w-1/3 ml-32 mr-auto">
                     <div class="flex items-center justify-center mb-5 ">
                         <h1 class="flex-1 text-4xl text-gray-900 ">{{ $username->username }}</h1>
@@ -96,36 +96,73 @@
                                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
                                     class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
                                 <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                    <span class="items-center justify-center">
-                                        <i class="fa fa-heart-o"></i>
-                                        <i class="fa fa-heart-o"></i>
+                                    <span
+                                        class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+
                                     </span>
                                 </div>
                             </div>
-                            <div class="relative w-1/4 h-full mb-1 mr-1 overflow-hidden">
+                            <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
                                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                    class="z-0 rounded-md shadow-md img-responsive">
-                                <div class="absolute inset-0 pb-2 overflow-hidden bg-black opacity-75 "></div>
+                                    class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
+                                <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                    <span
+                                        class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+
+                                    </span>
+                                </div>
                             </div>
                             <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
                                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                    class="z-0 rounded-md shadow-md img-responsive">
-                                <div class="absolute inset-0 pb-2 overflow-hidden bg-black opacity-75"></div>
+                                    class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
+                                <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                    <span
+                                        class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+
+                                    </span>
+                                </div>
                             </div>
                             <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
                                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                    class="z-0 rounded-md shadow-md img-responsive">
-                                <div class="absolute inset-0 pb-2 overflow-hidden bg-black opacity-75 "></div>
+                                    class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
+                                <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                    <span
+                                        class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+
+                                    </span>
+                                </div>
                             </div>
                             <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
                                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                    class="z-0 rounded-md shadow-md img-responsive">
-                                <div class="absolute inset-0 pb-2 overflow-hidden bg-black opacity-75 "></div>
+                                    class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
+                                <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                    <span
+                                        class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+
+                                    </span>
+                                </div>
                             </div>
                             <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
                                 <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                    class="z-0 rounded-md shadow-md img-responsive">
-                                <div class="absolute inset-0 pb-2 overflow-hidden bg-black opacity-75 "></div>
+                                    class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
+                                <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                    <span
+                                        class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+                                        <i class=" fa fa-heart-o fa-2x"></i>
+
+                                    </span>
+                                </div>
                             </div>
 
                         </div>
