@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="px-8 py-8 model-body">
                                     <ul class="text-center">
-                                        <a href="{{ url('/profile/' . $username->id) }}">
+                                        <a href="{{ url('/Front_page/' . $username->id) }}">
                                             <li
                                                 class="px-4 py-5 border-b border-gray-300 shadow-md cursor-pointer hover:bg-gray-200 hover:text-gray-600">
                                                 Profile</li>
