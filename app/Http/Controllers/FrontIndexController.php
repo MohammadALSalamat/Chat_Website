@@ -87,7 +87,6 @@ class FrontIndexController extends Controller
         }
         return view('Front-End.login_page');
     }
-
     //logout
 
     public function logout()

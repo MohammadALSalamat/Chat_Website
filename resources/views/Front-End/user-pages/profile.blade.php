@@ -11,7 +11,7 @@
                 <div class="flex items-center justify-center mb-5 ">
                     <h1 class="flex-1 text-4xl text-gray-900 ">{{ $username->username }}</h1>
                     <a href="{{ url('/profile/edit/' . $username->id) }}"><button
-                            class="flex-1 px-6 py-1 text-sm border border-gray-500 rounded bg-none">
+                            class="flex-1 px-5 py-1 text-sm border border-gray-500 rounded bg-none">
                             Edit Profile</button></a>
                     <i class="ml-10 fa fa-cog fa-spin fa-2x" title="settings"></i>
                 </div>

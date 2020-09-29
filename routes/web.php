@@ -71,5 +71,8 @@ Route::group(['middleware' => ['Front']], function () {
     Route::get('/', [FrontIndexController::class, 'main_page'])->name('main_page'); // main page for users
     Route::get('/Front_page/{id}', [FrontUserController::class, 'Front_page'])->name('Front_page'); // main page for users
     // user's profile that user can not access unless he register first
+    Route::post('/Store_Edit_Profile/{id}', [FrontUserController::class, 'Store_data'])->name('Store_profile_Edit');
     Route::get('/profile/edit/{id}', [FrontUserController::class, 'Edit_profile'])->name('Edit_profile');
+
+    // Edit Section
 });

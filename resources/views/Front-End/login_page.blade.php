@@ -87,7 +87,7 @@
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    /*escaped*/
+
     {!! Toastr::message() !!}
     <script src="{{ url('js/backend_js/jquery.min.js') }}"></script>
     <script src="{{ url('js/backend_js/matrix.login.js') }}"></script>

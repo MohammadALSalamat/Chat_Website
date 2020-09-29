@@ -27,7 +27,8 @@
             </div>
             <div class="col-span-7">
                 <div x-show="tab ==='profile'" class="items-center justify-center w-full h-auto ml-5">
-                    <form id="quickForm" class="block w-full px-5 py-5 bg-white shadow-lg " action="" method=" POST">
+                    <form id="quickForm" class="block w-full px-5 py-5 bg-white shadow-lg "
+                        action="{{ url('/Store_Edit_Profile/' . $username->id) }}" method="post">
                         @csrf
                         <h3
                             class="pb-5 mb-2 font-mono text-2xl font-semibold text-center border-b-2 border-gray-400 cursor-pointer hover:text-gray-500">
@@ -39,17 +40,16 @@
                                 </label>
                                 <input type="text" name="f_name"
                                     class="w-full px-2 py-2 mt-2 mb-4 border border-gray-400 border-dotted rounded shadow-md form-control"
-                                    id="f_name" placeholder="Enter First Name" required value="{{ $username->First_name }}">
+                                    id="f_name" placeholder="Enter First Name" value="{{ $username->First_name }}">
                             </div>
                             <div class="w-full">
                                 <label class="mt-3 mb-3 mr-2 font-semibold text-gray-700 ">Last_Name
                                     :</label>
                                 <input type="text" name="l_name"
                                     class="w-full px-2 py-2 mt-2 mb-4 border border-gray-400 border-dotted rounded shadow-md form-control"
-                                    placeholder="Enter Last Name" required value="{{ $username->Last_name }}">
+                                    placeholder="Enter Last Name" value="{{ $username->Last_name }}">
                             </div>
                         </div>
-
                         <div class="w-full">
                             <label for="exampleInputEmail1" class="mt-3 mb-3 mr-2 font-semibold text-gray-700 ">User_Name :
                             </label>
@@ -96,17 +96,16 @@
                                 </label>
                                 <input type="text" name="f_name"
                                     class="w-full px-2 py-2 mt-2 mb-4 border border-gray-400 border-dotted rounded shadow-md form-control"
-                                    id="f_name" placeholder="Enter First Name" required value="{{ $username->First_name }}">
+                                    id="f_name" placeholder="Enter First Name" value="{{ $username->First_name }}">
                             </div>
                             <div class="w-full">
                                 <label class="mt-3 mb-3 mr-2 font-semibold text-gray-700 ">Last_Name
                                     :</label>
                                 <input type="text" name="l_name"
                                     class="w-full px-2 py-2 mt-2 mb-4 border border-gray-400 border-dotted rounded shadow-md form-control"
-                                    placeholder="Enter Last Name" required value="{{ $username->Last_name }}">
+                                    placeholder="Enter Last Name" value="{{ $username->Last_name }}">
                             </div>
                         </div>
-
                         <div class="w-full">
                             <label for="exampleInputEmail1" class="mt-3 mb-3 mr-2 font-semibold text-gray-700 ">User_Name :
                             </label>
