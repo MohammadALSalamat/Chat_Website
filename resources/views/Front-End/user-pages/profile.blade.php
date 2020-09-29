@@ -5,7 +5,7 @@
     <div class="relative col-span-11 ">
         <!-- Information header -->
         <div class="flex col-span-4 py-5 mt-24 mr-32">
-            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
+            <img src="{{ asset('user-style/user-images/' . $username->avatar) }}"
                 class="object-cover w-48 h-48 ml-auto border-2 border-black rounded-full img-responsive">
             <div class="w-1/3 ml-32 mr-auto">
                 <div class="flex items-center justify-center mb-5 ">

@@ -11,7 +11,7 @@
           </div>
       @else
           <div class="fixed right-0 flex col-span-4 py-5 mt-24 mr-32 border-t-2 border-blue-700 rounded ">
-              <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
+              <img src="{{ asset('user-style/user-images/' . $username->avatar) }}"
                   class="w-12 h-12 border-2 border-black rounded-full img-responsive">
               <h3 class="ml-4 text-gray-900 bold">{{ $username->username }}
                   <p class="text-sm text-gray-600">

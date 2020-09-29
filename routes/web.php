@@ -71,8 +71,10 @@ Route::group(['middleware' => ['Front']], function () {
     Route::get('/', [FrontIndexController::class, 'main_page'])->name('main_page'); // main page for users
     Route::get('/Front_page/{id}', [FrontUserController::class, 'Front_page'])->name('Front_page'); // main page for users
     // user's profile that user can not access unless he register first
-    Route::post('/Store_Edit_Profile/{id}', [FrontUserController::class, 'Store_data'])->name('Store_profile_Edit');
     Route::get('/profile/edit/{id}', [FrontUserController::class, 'Edit_profile'])->name('Edit_profile');
+    Route::post('/Store_Edit_Profile/{id}', [FrontUserController::class, 'Store_data'])->name('Store_profile_Edit'); // update profiel
+    Route::post('/Store_Edit_Password/{id}', [FrontUserController::class, 'Update_password'])->name('Store_Update_password'); // update password
+    Route::post('/Store_Edit_avatar/{id}', [FrontUserController::class, 'Update_avatar'])->name('Store_Update_avatars'); // update avatar
 
     // Edit Section
 });

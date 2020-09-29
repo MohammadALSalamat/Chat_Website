@@ -24,19 +24,13 @@
 <body class="bg-gray-100">
     <!-- include top nav bar -->
     @include('layouts.front-layout.top_navbar')
-
     <!--content -->
     <div class="container grid grid-cols-12 gap-10 mb-10 ">
         @yield('content')
     </div>
     <!-- Toastr -->
-    <script src="{{ url('admin-style/plugins/toastr/toastr.min.js') }}"></script>
-    <script src="{{ url('admin-style/plugins/toastr/extra_toastr.js') }}"></script>
-    <!-- sweet alert -validation -->
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
+    <script src="{{ url('admin-style/plugins/toastr/toastr3.js') }}"></script>
     {!! Toastr::message() !!}
 </body>
 

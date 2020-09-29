@@ -13,25 +13,25 @@
         <ul class="flex">
             <li class="mr-6">
                 <a class="text-black hover:text-black-800" href="{{ url('/') }}"><i
-                        class="pr-2 fa fa-home fa-2x"></i></a>
+                        class="pr-2 fa fa-home fa-lg"></i></a>
             </li>
             @if (!empty(Session::get('UserEmail')))
                 <li class="mr-6">
-                    <a class="text-black-500 hover:text-black-800" href="#"><i class="pr-2 fa fa-send-o fa-2x"></i></a>
+                    <a class="text-black-500 hover:text-black-800" href="#"><i class="pr-2 fa fa-send-o fa-lg"></i></a>
                 </li>
                 <li class="mr-6">
-                    <a class="text-black-500 hover:text-black-800" href="#"><i class="fa fa-heart-o fa-2x"></i></a>
+                    <a class="text-black-500 hover:text-black-800" href="#"><i class="fa fa-heart-o fa-lg"></i></a>
                 </li>
             @endif
             <div x-data="{isOpen:false}">
                 <li class="mr-6">
-                    <a class="text-black-500 hover:text-black-800" href="#"><i class="fa fa-user fa-2x"
+                    <a class="text-black-500 hover:text-black-800" href="#"><i class="fa fa-user fa-lg"
                             @click="isOpen=true"></i></a>
                 </li>
                 <!--
-                     here is if statemnt work depends on if the user login or not
-                    if user login then show dropdown to update his profile and more featuers
-                    if not then show him regiter and login page
+                here is if statemnt work depends on if the user login or not
+                if user login then show dropdown to update his profile and more featuers
+                if not then show him regiter and login page
                 -->
                 @if (empty(Session::has('UserEmail')))
                     <!-- Show model to toggle a login page-->
@@ -139,15 +139,14 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- End of First condation that shows the login page-->
                 @else
-                    <div x-show="isOpen" style=" background:rgba(0 ,0 ,0 ,.5) ;"
+                    <div x-show.transition.duration.300ms="isOpen" style=" background:rgba(0 ,0 ,0 ,.5) ;"
                         class="fixed top-0 left-0 flex items-center w-full h-full overflow-y-auto shadow-lg">
-                        <div class="container overflow-y-auto rounded-lg max-auto lg:px-32">
+                        <div class="container w-2/4 rounded-lg max-auto lg:px-32">
                             <div class="bg-white rounded ">
                                 <div class="flex justify-end pt-2 pr-4">
-                                    <button @click=" isOpen = false"
+                                    <button @click.away="isOpen=false" @click="isOpen=false"
                                         class="leading-none text-black text:3xl hover:text-gray-700">&times;</button>
                                 </div>
                                 <div class="px-8 py-8 model-body">
@@ -179,7 +178,6 @@
                     </div>
                 @endif
             </div>
-
         </ul>
     </div>
 </nav>
