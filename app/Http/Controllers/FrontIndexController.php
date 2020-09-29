@@ -53,6 +53,7 @@ class FrontIndexController extends Controller
             if (empty($data['Followering'])) {
                 $data['Followering'] = 0;
             }
+            $avatar = 'profile_defult.jpg'; // defualt image for new users
             $newData = new FrontUser;
             $newData->First_name = $data['f_name'];
             $newData->Last_name = $data['l_name'];
@@ -62,9 +63,10 @@ class FrontIndexController extends Controller
             $newData->Followers = $data['Followers'];
             $newData->Followering = $data['Followering'];
             $newData->description = $data['Desc'];
+            $newData->avatar = $avatar;
             $newData->save();
-            return back();
             Toastr::success('The user has been added you can login now:)', 'Success');
+            return back();
         }
         return view('Front-End.register_page');
     }
