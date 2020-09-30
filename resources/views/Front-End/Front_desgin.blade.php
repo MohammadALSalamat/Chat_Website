@@ -32,6 +32,7 @@
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ url('admin-style/plugins/toastr/toastr3.js') }}"></script>
     {!! Toastr::message() !!}
+
 </body>
 
 </html>

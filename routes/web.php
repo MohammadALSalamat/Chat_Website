@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontUserController;
 use App\Http\Controllers\FrontIndexController;
 use App\Http\Controllers\BackDashboardController;
-
+use App\Http\Controllers\UserPosteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,4 +77,9 @@ Route::group(['middleware' => ['Front']], function () {
     Route::post('/Store_Edit_avatar/{id}', [FrontUserController::class, 'Update_avatar'])->name('Store_Update_avatars'); // update avatar
 
     // Edit Section
+
+
+    // posts  section
+
+    Route::match(['get', 'post'], '/post/{id}', [UserPosteController::class, 'posts_holder'])->name('send_post');
 });
