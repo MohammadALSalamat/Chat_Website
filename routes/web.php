@@ -81,5 +81,6 @@ Route::group(['middleware' => ['Front']], function () {
 
     // posts  section
 
-    Route::match(['get', 'post'], '/post/{id}', [UserPosteController::class, 'posts_holder'])->name('send_post');
+    Route::match(['get', 'post'], '/post/{id}', [UserPosteController::class, 'posts_holder'])->name('send_post'); // insert text as a post
+    Route::match(['get', 'post'], '/image/{id}', [UserPosteController::class, 'Image_holder'])->name('Image_post'); // insert text with image as a post
 });

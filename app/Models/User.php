@@ -44,9 +44,5 @@ class User extends Authenticatable
 
 
     // relation between user and posts .
-
-    public function Post()
-    {
-        return $this->hasMany('App\Models\userPoste');
-    }
+    protected $table = "users";
 }

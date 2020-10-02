@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class userPoste extends Model
 {
     use HasFactory;
-
-    public function users()
+    protected $table = "user_postes";
+    public function Frontuser()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(FrontUser::class, 'user_id');
     }
 }

@@ -69,73 +69,36 @@
             <div class="ml-5 ">
                 <div x-show="tab ==='posts'">
                     <div class="flex flex-wrap items-center justify-center" x-data="{overLay:false}">
-                        <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
-                            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
-                            <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                <span class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-                                    <i class=" fa fa-heart-o fa-2x"></i>
+                        @foreach ($posts as $post)
+                            @if (empty($post->image) && empty($post->video))
+                                <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
+                                    <p class="h-64 px-3 py-3 bg-white border border-gray-100 shadow-lg">
+                                        {{ $post->body }}
+                                    </p>
+                                    <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                        <span
+                                            class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                            <i class=" fa fa-comment-o fa-2x"></i>
+                                            <i class=" fa fa-heart-o fa-2x"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="relative w-1/4 h-64 mb-2 mr-2 overflow-hidden">
+                                    <img src="{{ asset('user-style/posts-images/' . $post->image) }}"
+                                        class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
+                                    <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
+                                        <span
+                                            class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
+                                            <i class=" fa fa-heart-o fa-2x"></i>
+                                            <i class=" fa fa-heart-o fa-2x"></i>
 
-                                </span>
-                            </div>
-                        </div>
-                        <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
-                            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
-                            <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                <span class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-                                    <i class=" fa fa-heart-o fa-2x"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            @endif
 
-                                </span>
-                            </div>
-                        </div>
-                        <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
-                            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
-                            <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                <span class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-
-                                </span>
-                            </div>
-                        </div>
-                        <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
-                            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
-                            <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                <span class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-
-                                </span>
-                            </div>
-                        </div>
-                        <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
-                            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
-                            <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                <span class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-
-                                </span>
-                            </div>
-                        </div>
-                        <div class="relative w-1/4 h-full mb-2 mr-2 overflow-hidden">
-                            <img src="{{ asset('admin-style/admin-images/IMG_1282.jpg') }}"
-                                class="z-0 rounded-md shadow-md img-responsive" @mouseenter="overLay=true">
-                            <div class="absolute inset-0 bg-black opacity-75 " x-show="overLay">
-                                <span class="z-40 flex items-center my-32 text-2xl font-bold text-white justify-evenly ">
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-                                    <i class=" fa fa-heart-o fa-2x"></i>
-
-                                </span>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
                 <div x-show="tab ==='GTV'">

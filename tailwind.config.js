@@ -10,6 +10,7 @@ module.exports = {
             padding: '2rem'
         },
 
+
     },
     variants: {
         accessibility: ['responsive', 'focus'],

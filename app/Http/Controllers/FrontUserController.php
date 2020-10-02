@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\FrontUser;
+use App\Models\userPoste;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\Session;
 
 class FrontUserController extends Controller
 {
@@ -14,8 +14,12 @@ class FrontUserController extends Controller
     //start with the profile to show
     public function Front_page($id)
     {
+        // user name data
         $username = FrontUser::where(['id' => $id])->first();
-        return view('Front-End.user-pages.profile', compact('username'));
+
+        // posts data
+        $posts = userPoste::where('user_id', $id)->get();
+        return view('Front-End.user-pages.profile', compact('username', 'posts'));
     }
     public function Edit_profile(Request $request, $id)
     {

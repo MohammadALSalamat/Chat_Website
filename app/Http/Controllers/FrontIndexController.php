@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\FrontUser;
+use App\Models\userPoste;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class FrontIndexController extends Controller
@@ -16,8 +18,9 @@ class FrontIndexController extends Controller
         // get the detailes of registerd user
 
         $username = FrontUser::where(['email' => Session::get('UserEmail')])->first();
+        $posts_data = userPoste::with('Frontuser')->orderBy('created_at', 'DESC')->get(); // let the user see all posts in post table
 
-        return view('layouts.front-layout.main_desgin', compact('username'));
+        return view('layouts.front-layout.main_desgin', compact('username', 'posts_data'));
     }
 
 
@@ -81,7 +84,15 @@ class FrontIndexController extends Controller
             if ($checkUserDetailes == 1) {
                 // out the usr in session
                 Session::put('UserEmail', $data['email']); // this session uses for valids authontcation
-                return redirect('/');
+                // get all data that user will see after login.
+                $username = FrontUser::where(['email' => $data['email']])->first();
+                $posts_data = userPoste::orderBy('created_at', 'DESC')->get(); // let the user see all posts in post table
+                foreach ($posts_data as $item) {
+                    $authers = FrontUser::select('username')->where('id', $item->user_id)->get();
+                    foreach ($authers as $auther) {
+                    }
+                }
+                return view('layouts.front-layout.main_desgin', compact('posts_data', 'username', 'auther'));
             } else {
                 Toastr::error('Please Check Again or Register if you are not registered yet', 'Error');
                 return back();
@@ -89,6 +100,7 @@ class FrontIndexController extends Controller
         }
         return view('Front-End.login_page');
     }
+
     //logout
 
     public function logout()

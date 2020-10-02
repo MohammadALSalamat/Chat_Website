@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class FrontUser extends Model
 {
     use HasFactory;
+    public function Post()
+    {
+        return $this->hasMany(userPoste::class);
+    }
 }
